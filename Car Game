@@ -1,0 +1,33 @@
+pick = ""
+car_started = ""
+car_exit = ""
+while pick.lower() != 'quit':
+    pick = input('Choose (start/stop/quit): ').lower().strip()
+    if pick == 'start':
+        if not car_started:
+            print('Car started......Ready to go!')
+            car_started = True
+        else:
+            print('Car is already started...')
+    elif pick == 'stop':
+        if car_started:
+            print('Car stopped!')
+            car_started = False
+        else:
+            print('Car is already stopped...')
+    elif pick == 'help':
+        print('''
+start - to start the car
+stop - to stop the car
+quit - to quit the car
+''')
+    elif pick == 'quit':
+        if car_started:
+            print('Stop the car first to exit car!')
+        elif not car_exit:
+            print('You have exit the car...')
+            car_exit = True
+        else:
+            print('You have already exited the car')
+    else:
+        print("I don't understand that...")
